@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router';
 import './App.css';
-
+import AllBoard from './components/AllBoard';
+import UpdateBoard from './components/UpdateBoard';
+import ViewBoard from './components/ViewBoard';
+import ViewList from './components/ViewList';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Routes>
+        <Route path="/" element={<AllBoard />} />
+        <Route path="/update/:id" element={<UpdateBoard />} />
+        <Route path="/viewboard/:id" element={<ViewBoard />} />
+        <Route path="viewboard/:id/viewlist/:id" element={<ViewList />} />
+      </Routes>
     </div>
   );
 }
